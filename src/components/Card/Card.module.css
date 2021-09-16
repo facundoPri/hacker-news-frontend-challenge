@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  /* width: 55rem; */
+  flex: 1;
+  height: 9rem;
+  padding: 0 0 0 2.6rem;
+  border-radius: 0.6rem;
+  border: solid 0.1rem #979797;
+  background-color: #fff;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.container:hover {
+  opacity: 0.6;
+}
+
+.textSection {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  flex-direction: column;
+}
+
+.timeSection {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.025rem;
+  color: #6b6b6b;
+}
+
+.time {
+  font-size: 1.1rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #767676;
+  margin-left: 0.8rem;
+}
+
+.heartSection {
+  display: flex;
+  justify-content: center;
+  width: 6.8rem;
+  margin: 0 0 0 1.6rem;
+  /* opacity: 0.06; */
+  border: solid 1px rgba(96, 96, 96, 0.06);
+  background-color: rgba(96, 96, 96, 0.06);
+}
