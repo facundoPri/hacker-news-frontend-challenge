@@ -1,5 +1,5 @@
 import { render, screen } from "../testUtils";
-import { Home } from "../../src/pages/index";
+import { Home } from "../../pages/index";
 
 test("Should render hello world", () => {
   render(<Home />);

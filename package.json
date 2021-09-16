@@ -4,13 +4,11 @@
     "build": "next build",
     "start": "next start",
     "check-types": "tsc --pretty --noEmit",
-    "check-format": "prettier --check .",
-    "check-lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "format": "prettier --write .",
     "lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test-all": "yarn lint && yarn type-check && yarn test",
+    "test-all": "yarn lint && yarn check-types && yarn test",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
@@ -25,8 +23,6 @@
       "yarn lint",
       "yarn format",
       "yarn check-type",
-      "yarn check-format",
-      "yarn check-lint",
       "yarn build"
     ]
   },
