@@ -20,7 +20,7 @@ export const Select = ({
   items,
   handleSelection,
 }: selectProps): JSX.Element => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const select = useRef(null);
 
   useOnClickOutside(select, () => setOpen(false));

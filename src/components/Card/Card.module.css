@@ -1,7 +1,5 @@
 .container {
   display: flex;
-  /* width: 55rem; */
-  flex: 1;
   height: 9rem;
   padding: 0 0 0 2.6rem;
   border-radius: 0.6rem;
