@@ -8,8 +8,8 @@ type CardProps = {
   id: number;
   author: string;
   story_title: string;
-  story_url: URL;
-  created_at: Date;
+  story_url: string;
+  created_at: string;
   favorited: boolean;
 };
 
