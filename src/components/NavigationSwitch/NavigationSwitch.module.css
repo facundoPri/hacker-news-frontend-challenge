@@ -18,6 +18,7 @@
   color: #606060;
   border: solid 1px #d6d6d6;
   z-index: 1;
+  background-color: #fcfcfc;
 }
 
 .selected {
