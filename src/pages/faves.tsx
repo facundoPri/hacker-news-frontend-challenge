@@ -2,11 +2,20 @@ import { useRouter } from "next/dist/client/router";
 import { Card } from "src/components/Card";
 import { Header } from "src/components/Header";
 import { NavigationSwitch } from "src/components/NavigationSwitch";
+import useLocalStorage from "src/hooks/useLocalStorage";
 
 import styles from "../styles/pageStyles.module.css";
 
 export const Faves = (): JSX.Element => {
   const router = useRouter();
+  const [favNews, setFavNews] = useLocalStorage("favNews", {});
+
+  const handleUnFav = (news) => {
+    const newFavs = { ...favNews };
+    if (newFavs[news.id]) delete newFavs[news.id];
+    setFavNews(newFavs);
+  };
+
   return (
     <div>
       <Header />
@@ -15,56 +24,18 @@ export const Faves = (): JSX.Element => {
           <NavigationSwitch actualPage={router.asPath} />
         </div>
         <div className={styles.cardsContainer}>
-          <Card
-            id={1}
-            author={"author"}
-            story_title={
-              "Yes, React is taking over front-end development. The question is why."
-            }
-            story_url="http://ycombinator.com"
-            created_at="2021-09-16T18:21:51.000Z"
-            favorited={true}
-          />
-          <Card
-            id={1}
-            author={"author"}
-            story_title={
-              "Yes, React is taking over front-end development. The question is why."
-            }
-            story_url={"http://ycombinator.com"}
-            created_at={"2021-09-16T18:21:51.000Z"}
-            favorited={true}
-          />
-          <Card
-            id={1}
-            author={"author"}
-            story_title={
-              "Yes, React is taking over front-end development. The question is why."
-            }
-            story_url={"http://ycombinator.com"}
-            created_at={"2021-09-16T18:21:51.000Z"}
-            favorited={true}
-          />
-          <Card
-            id={1}
-            author={"author"}
-            story_title={
-              "Yes, React is taking over front-end development. The question is why."
-            }
-            story_url={"http://ycombinator.com"}
-            created_at={"2021-09-16T18:21:51.000Z"}
-            favorited={true}
-          />
-          <Card
-            id={1}
-            author={"author"}
-            story_title={
-              "Yes, React is taking over front-end development. The question is why."
-            }
-            story_url={"http://ycombinator.com"}
-            created_at={"2021-09-16T18:21:51.000Z"}
-            favorited={true}
-          />
+          {Object.values(favNews).map((info, index) => (
+            <Card
+              key={`${index}-${info.id}`}
+              id={info.id}
+              author={info.author}
+              story_title={info.story_title}
+              story_url={info.story_url}
+              created_at={info.created_at}
+              favorited={info.favorited}
+              handleFav={handleUnFav}
+            />
+          ))}
         </div>
       </div>
     </div>
