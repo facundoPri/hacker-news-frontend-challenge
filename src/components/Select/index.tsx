@@ -39,7 +39,13 @@ export const Select = ({
         <ul className={styles.list}>
           {items.map((item, index) => (
             <li className={styles.item} key={`${item.name}-${index}`}>
-              <button type="button" onClick={() => handleSelection(item.value)}>
+              <button
+                type="button"
+                onClick={() => {
+                  handleSelection(item.value);
+                  setOpen(false);
+                }}
+              >
                 <Image
                   alt={item.name}
                   src={item.src}
