@@ -5,12 +5,13 @@ import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 type CardProps = {
-  id: number;
+  id: string;
   author: string;
   story_title: string;
   story_url: string;
   created_at: string;
   favorited: boolean;
+  handleFav: (CardProps) => void;
 };
 
 export const Card = ({
@@ -20,11 +21,13 @@ export const Card = ({
   story_url,
   created_at,
   favorited,
+  handleFav,
 }: CardProps): JSX.Element => {
   const created_ago = useMemo(() => {
     dayjs.extend(relativeTime);
     return dayjs(created_at).fromNow();
   }, [created_at]);
+
   return (
     <div className={styles.container}>
       <div
@@ -41,7 +44,20 @@ export const Card = ({
         </div>
         <span className={styles.title}>{story_title}</span>
       </div>
-      <div className={styles.heartSection} onClick={() => alert(id)}>
+      <div
+        className={styles.heartSection}
+        onClick={() =>
+          handleFav({
+            id,
+            author,
+            story_title,
+            story_url,
+            created_at,
+            favorited,
+            handleFav,
+          })
+        }
+      >
         {favorited ? (
           <Image
             src="/icon-favorite-full.svg"
