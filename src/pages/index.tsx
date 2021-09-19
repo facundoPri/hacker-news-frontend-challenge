@@ -1,4 +1,5 @@
 import { useRouter } from "next/dist/client/router";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { Card } from "src/components/Card";
 import { Header } from "src/components/Header";
@@ -53,7 +54,7 @@ export const Home = (): JSX.Element => {
   }, [isVisible, isRefreshing, data]);
 
   return (
-    <div className={styles.pageContainer}>
+    <div>
       <Header />
       <div className={styles.contentContainer}>
         <div className={styles.navigation}>
@@ -62,6 +63,7 @@ export const Home = (): JSX.Element => {
         <div className={styles.selectNews}>
           <Select
             title="Select your news"
+            selected={selectedNews}
             items={[
               {
                 src: "/icon-angular.png",
@@ -82,6 +84,8 @@ export const Home = (): JSX.Element => {
             handleSelection={(value) => setSelectedNews(value)}
           />
         </div>
+        <div className={styles.spinner} />
+
         <div className={styles.cardsContainer}>
           {news?.map((info, index) => {
             if (
@@ -107,8 +111,21 @@ export const Home = (): JSX.Element => {
             );
           })}
         </div>
-        <div ref={ref}>
-          {isLoadingMore ? "loading..." : isReachingEnd ? "no more News" : ""}
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "1rem",
+          }}
+          ref={ref}
+        >
+          {isLoadingMore ? (
+            <Image src="/spinner.svg" height={60} width={60} />
+          ) : isReachingEnd ? (
+            "no more News"
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>
