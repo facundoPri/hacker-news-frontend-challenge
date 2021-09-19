@@ -1,5 +1,4 @@
 import { render, RenderResult } from "@testing-library/react";
-import '../styles/globals.css'
 
 const Providers = ({ children }) => {
   return children;
