@@ -1,5 +1,5 @@
 import { useRouter } from "next/dist/client/router";
-import { Card } from "src/components/Card";
+import { Card, CardProps } from "src/components/Card";
 import { Header } from "src/components/Header";
 import { NavigationSwitch } from "src/components/NavigationSwitch";
 import useLocalStorage from "src/hooks/useLocalStorage";
@@ -24,7 +24,7 @@ export const Faves = (): JSX.Element => {
           <NavigationSwitch actualPage={router.asPath} />
         </div>
         <div className={styles.cardsContainer}>
-          {Object.values(favNews).map((info, index) => (
+          {Object.values(favNews).map((info: CardProps, index) => (
             <Card
               key={`${index}-${info.id}`}
               id={info.id}

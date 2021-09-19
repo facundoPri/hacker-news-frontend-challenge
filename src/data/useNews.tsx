@@ -8,16 +8,27 @@ const getKey = (pageIndex, previousPageData, selectedNews, pageSize) => {
   return `https://hn.algolia.com/api/v1/search_by_date?query=${selectedNews}&hitsPerPage=${pageSize}&page=${pageIndex}`;
 };
 
-export const useNews = (selectedNews: string) => {
+type useNewReturn = {
+  news: any[] | undefined;
+  data: any[] | undefined;
+  isLoadingInitialData: boolean;
+  isLoadingMore: boolean;
+  isEmpty: boolean;
+  isReachingEnd: boolean;
+  isRefreshing: boolean;
+  size: number;
+  setSize: (size: number | ((_size: number) => number)) => Promise<any[]>;
+};
+
+export const useNews = (selectedNews: string): useNewReturn => {
   const PAGE_SIZE = 10;
 
-  const { data, error, mutate, size, setSize, isValidating } = useSWRInfinite(
+  const { data, error, size, setSize, isValidating } = useSWRInfinite(
     (...args) => getKey(...args, selectedNews, PAGE_SIZE),
     fetcher
   );
 
   const news = data ? [].concat(...data) : [];
-  console.log(data);
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||

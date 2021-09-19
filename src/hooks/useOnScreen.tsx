@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, RefObject } from "react";
 
-export function useOnScreen(ref) {
+export function useOnScreen(ref: RefObject<Element>): boolean {
   const [isIntersecting, setIntersecting] = useState(false);
 
   useEffect(() => {
