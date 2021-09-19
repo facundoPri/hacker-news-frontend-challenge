@@ -57,9 +57,10 @@
 }
 
 .item > button:hover,
-.item > button:focus {
+.item > button:focus,
+.selected > button {
   cursor: pointer;
-  background-color: rgba(234, 234, 234, 0.2);
+  background-color: rgba(234, 234, 234, 0.3);
 }
 
 .item {
