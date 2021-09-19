@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
-type CardProps = {
+export type CardProps = {
   id: string;
   author: string;
   story_title: string;
