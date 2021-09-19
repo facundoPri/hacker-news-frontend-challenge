@@ -37,13 +37,11 @@ export const Home = (): JSX.Element => {
     if (newFavs[news.id]) {
       delete newFavs[news.id];
     } else {
-      console.log(handleFav);
       newFavs[news.id] = {
         ...news,
         favorited: true,
       };
     }
-    // console.log(newFavs[news.id]);
     setFavNews(newFavs);
   };
 
