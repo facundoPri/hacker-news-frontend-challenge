@@ -14,11 +14,9 @@
   </p>
 </p>
 
-
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
-  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <summary>Table of Contents</summary>
   <ol>
     <li>
       <a href="#about-the-project">About The Project</a>
@@ -37,8 +35,6 @@
   </ol>
 </details>
 
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
@@ -48,9 +44,6 @@ The web application displays the latest posts on the HackerNews api, allowing th
 
 The project also uses [Storybook](https://storybook.js.org/) for component documentation and [Jest](https://jestjs.io/) for testing.
 
-
-
-
 ### Built With
 
 * [Nextjs](https://nextjs.org/)
@@ -58,8 +51,6 @@ The project also uses [Storybook](https://storybook.js.org/) for component docum
 * CSS
 * [Storybook](https://storybook.js.org/)
 * [Jest](https://jestjs.io/)
-
-
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -120,10 +111,9 @@ Have node package manager of choice
    yarn storybook
    ```
 
-
 <!-- CONTACT -->
 ## Contact
 
-Facundo Prieto - facundo.prieto312@gmail.com
+Facundo Prieto - facundo.prieto321@gmail.com
 
 Project Link: [Hacker news fontend challenge](https://github.com/facundoPri/hacker-news-frontend-challenge)
