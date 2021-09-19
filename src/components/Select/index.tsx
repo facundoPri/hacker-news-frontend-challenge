@@ -12,15 +12,18 @@ type itemProps = {
 type selectProps = {
   title: string;
   items: itemProps[];
+  selected: string;
   handleSelection: (string) => void;
 };
 
 export const Select = ({
   title,
   items,
+  selected,
   handleSelection,
 }: selectProps): JSX.Element => {
   const [isOpen, setOpen] = useState(false);
+
   const select = useRef(null);
 
   useOnClickOutside(select, () => setOpen(false));
@@ -38,7 +41,12 @@ export const Select = ({
       {isOpen && (
         <ul className={styles.list}>
           {items.map((item, index) => (
-            <li className={styles.item} key={`${item.name}-${index}`}>
+            <li
+              className={`${styles.item} ${
+                item.value == selected && styles.selected
+              }`}
+              key={`${item.name}-${index}`}
+            >
               <button
                 type="button"
                 onClick={() => {
