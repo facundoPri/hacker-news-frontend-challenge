@@ -1,7 +1,7 @@
 module.exports = {
   roots: ["<rootDir>/src"],
   testEnvironment: "jsdom",
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
   testPathIgnorePatterns: ["<rootDir>[/\\\\](node_modules|.next)[/\\\\]"],
   transformIgnorePatterns: ["[/\\\\]node_modules[/\\\\].+\\.(ts|tsx)$"],
   transform: {
@@ -11,5 +11,8 @@ module.exports = {
     "jest-watch-typeahead/filename",
     "jest-watch-typeahead/testname",
   ],
-  setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
+  moduleNameMapper: {
+    "\\.(scss|sass|css)$": "identity-obj-proxy",
+  },
+  setupFilesAfterEnv: ["@testing-library/jest-dom/extend-expect"],
 };
