@@ -1,33 +1,129 @@
-# NextJS Typescript Boilerplate
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/facundoPri/hacker-news-frontend-challenge">
+    <img src="public/hacker-news.svg" alt="Logo" width="208" height="28">
+  </a>
 
-Bootstrap a developer-friendly NextJS app configured with:
+  <h3 align="center">Hacker news fontend challenge</h3>
 
-- [Typescript](https://www.typescriptlang.org/)
-- Linting with [ESLint](https://eslint.org/)
-- Formatting with [Prettier](https://prettier.io/)
-- Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
-- Testing with [Jest](https://jestjs.io/) and [`react-testing-library`](https://testing-library.com/docs/react-testing-library/intro)
+  <p align="center">
+   Frontend for hacker news 
+    <br />
+    <a href="https://hacker-news-frontend-challenge.netlify.app/">View Demo</a>
+  </p>
+</p>
 
-## Preview
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest)
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ol>
+</details>
 
-## Deploy your own
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-## How to use
+Small responsive web application, made with Nextjs and using the [HackersNews public API](https://hn.algolia.com/api)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+The web application displays the latest posts on the HackerNews api, allowing the user to filter by technologies and save their favorite posts. It also uses infinite scroll as pagination and SWR to cache the requests made, for better user experience and less loading times.
 
-```bash
-npx create-next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-# or
-yarn create next-app --example with-typescript-eslint-jest with-typescript-eslint-jest-app
-```
+The project also uses [Storybook](https://storybook.js.org/) for component documentation and [Jest](https://jestjs.io/) for testing.
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+
+
+
+### Built With
+
+* [Nextjs](https://nextjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* CSS
+* [Storybook](https://storybook.js.org/)
+* [Jest](https://jestjs.io/)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple steps.
+
+### Prerequisites
+
+Have node package manager of choice
+
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
+
+  or
+
+* yarn
+  ```sh
+  npm install --global yarn
+  ```
+
+### Installation
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/facundoPri/hacker-news-frontend-challenge
+   ```
+2. Install NPM packages
+   ```sh
+   npm install
+   ```
+
+   or
+
+   ```sh
+   yarn
+   ```
+2. Run project on localhost
+   ```sh
+   npm run dev
+   ```
+
+   or
+
+   ```sh
+   yarn dev
+   ```
+
+2. Run project storybook
+   ```sh
+   npm run storybook
+   ```
+
+   or
+
+   ```sh
+   yarn storybook
+   ```
+
+
+<!-- CONTACT -->
+## Contact
+
+Facundo Prieto - facundo.prieto312@gmail.com
+
+Project Link: [Hacker news fontend challenge](https://github.com/facundoPri/hacker-news-frontend-challenge)
